@@ -2,6 +2,59 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+header, footer{
+  grid-column: 1/4;
+  display:flex;
+}
+header{
+  grid-area: header;
+}
+nav{
+  grid-area: nav;
+  display: flex;
+  font-size: 20px;
+  text-align: center;
+}
+main{
+  grid-area: main;
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+.container1{
+  display:grid;
+  grid-template-areas:"header header header" "nav nav nav" "main main main";
+}
+.container2{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.formulario{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #555555;
+}
+#formulario{
+  
+}
+#headerText{
+  text-align: center;
+  width: 100%;
+}
+#top{
+  background: #EAEAED;
+  border-radius: 0px;
+}
+#logo{
+  width:63px;
+  height: 60px;
+  }
+
+#help {
+  background: #C8102E;
+}
 
 a {
   color: #00B7FF;
