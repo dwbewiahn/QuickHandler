@@ -1,4 +1,8 @@
-
+main{ 
+    background: none;
+    background-color: #31a6ff50;
+    height: auto;
+}
 
 main section{
     display: flex;
@@ -6,18 +10,23 @@ main section{
     border-width: 10px;
     border-color: #31A6FF;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 15px 20%;
+    padding: 40px 20%;
 }
 
 main h1{
-    padding: 10px 0px 5px 50px;
+    padding: 50px 0px 0px 20%;
     font-size: 50px;
     margin-bottom: 0px;
+
   }
 main p{
-    font-size: 20px;
+    font-size: 15px;
 }
 div{
     height: 10px;
 
+}
+
+#requestList{
+    background: none;
 }

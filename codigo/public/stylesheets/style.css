@@ -35,8 +35,8 @@ nav{
   justify-content: space-between;
   grid-area: nav;
   font-size: 20px;
-  height: auto;
-  padding: 0px 50 px 0px;  
+  height: 80px;
+  padding: 30px 50px 0px;  
 }
 
 
@@ -64,6 +64,7 @@ nav a:hover {
   border: solid 2px #31A6FF ;
   padding: 10px 50px;
   font-size: 20px;
+  
   text-align: center;
   
   } 
@@ -93,6 +94,7 @@ main h1{
   padding: 150px 0px 5px 50px;
   font-size: 50px;
   margin-bottom: 0px;
+  
 }
 
 main p{
@@ -125,7 +127,7 @@ footer{
  display:flex;
  flex-direction: column;
  text-align: center;
- background-color: #EAEAED;
+ background-color: white;
  font-size: 20px;
 }
 

@@ -11,16 +11,8 @@
 
 <body>
   <header>
-    <!-- <section id="headerSocial">
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-instagram"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-            </section> -->
-    <!-- <section id="headerLinks"> -->
     <a href="#">Torne-se um Handler</a>
     <a href="#">Sobre QuickHanlder</a>
-    <!-- </section> -->
   </header>
 
   <nav id="navBar">
@@ -33,39 +25,37 @@
   </nav>
 
   <main>
+    <h1>Criar pedido de Handler</h1>
+    <section id="mainSection">
+      <section id="formPedido">
+        <label for="handlerType"><b>Selcione Tipo de Hanlder</b></label>
+        <select name="handlerType" id="handlerTye">
+          <option value=""></option>
+          <option value="1">Canalizador</option>
+          <option value="2">Eletricista</option>
+          <option value="3">Pedreiro</option>
+          <option value="4">Carpinteiro</option>
+          <option value="5">Pintor</option>
+          <option value="6">Reparador</option>
+        </select>
 
-    <section>
-      <h1>Criar pedido de Handler</h1>
-      <p>Preencha o formulario abaixo e selecione agendar</p>
+        <label for="date">Data:</label>
+        <input type="date" id="date" name="date">
 
-      <label for="handlerType"><b>Selcione Tipo de Hanlder</b></label>
-      <select name="handlerType" id="handlerTye">
-        <option value=""></option>
-        <option value="1">Canalizador</option>
-        <option value="2">Eletricista</option>
-        <option value="3">Pedreiro</option>
-        <option value="4">Carpinteiro</option>
-        <option value="5">Pintor</option>
-        <option value="6">Reparador</option>
-      </select>
+        <label for="time">Hora:</label>
+        <input type="time" id="time" name="time">
 
-      <label for="date">Data:</label>
-      <input type="date" id="date" name="date">
+        <label for="morada">Morada</label>
+        <input type="text" id="morada" name="morada" placeholder="Ex.: Av. da Liberdade,10, Lisboa">
 
-      <label for="time">Hora:</label>
-      <input type="time" id="time" name="time">
+        <label for="description">Descrição</label>
+        <textarea id="description" name="description" maxlength="255" placeholder="Descreva o serviço solicitado... (Max 255 caract.)"></textarea>
 
-      <label for="morada">Morada</label>
-      <input type="text" id="morada" name="morada" placeholder="Ex.: Av. da Liberdade,10, Lisboa"> 
+        <a href="#" class="buttonMain" id="agendar">Agendar</a>
 
-      <label for="description">Descrição</label>
-      <textarea id="description" name="description" placeholder="Descreva o serviço solicitado..."></textarea>
-
-      <a href="#" class="buttonMain" id="agendar">Agendar</a>
-
+      </section>
     </section>
 
-    
   </main>
 
   <footer>

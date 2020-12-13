@@ -1,39 +1,50 @@
 
-  main section{
+   #mainSection{
+    background: none;
+   } 
+
+  #formPedido{
     display: flex;
     align-items:left;
     justify-content: space-between;
-    flex-direction: column; 
+    flex-direction: column;
+    margin: 50px auto;   
+    padding: 20px 10%;
+    width: 20%; 
+    background-color: rgba(255, 255, 255, 0.5);
+    
   }
-  section{
-    padding: 0% 5%;
-    width:350px;
+
+  main label{
+      
+      font-weight: bold;
   }
+
   main h1{
     padding: 10px 0px 5px 50px;
     font-size: 50px;
     margin-bottom: 0px;
+    text-align: center;
+
   }
   
-  main p{
-    padding: 0px 0px 0px 50px;
-    margin-top: 0px;;
-    font-size: 25px;
+  #description{
+    height: 200px;
+    
   }
 
-  #description{
-      height: 200px;
-   
-  }
 
   .buttonMain{
-    border: solid 2px #31A6FF ;
+    border: solid 3px #31A6FF ;
     background-color: white;
     color: #31A6FF;
     border-radius: 5px;
     padding: 10px 50px;
+    font-weight: 500;
     font-size: 20px;
     text-align: center; 
+    margin-top: 25px;
+    margin-left: 0px;
     } 
 
    .buttonMain:hover{
