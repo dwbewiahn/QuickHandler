@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>QuickHandler</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/styleCriarPedido.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="icon" href="images/QHLogoBlue.png" type="image/x-icon">
 </head>
@@ -32,8 +33,39 @@
   </nav>
 
   <main>
-    <h1>Solicitar Handler</h1>
-    <a href="#" class="buttonMain">Agendar</a>
+
+    <section>
+      <h1>Solicitar Handler</h1>
+      <p>Preencha o formulario abaixo e selecione agendar</p>
+      
+      <label for="handlerType"><b>Selcione Tipo de Hanlder</b></label>
+      <select name="handlerType" id="handlerTye">
+        <option value=""></option>
+        <option value="1">Canalizador</option>
+        <option value="2">Eletricista</option>
+        <option value="3">Pedreiro</option>
+        <option value="4">Carpinteiro</option>
+        <option value="5">Pintor</option>
+        <option value="6">Reparador</option>
+      </select>
+
+      <label for="date">Data:</label>
+      <input type="date" id="date" name="date">
+
+      <label for="time">Hora:</label>
+      <input type="time" id="time" name="time">
+
+      <label for="morada">Morada</label>
+      <input type="text" id="morada" name="morada" placeholder="Ex.: Av. da Liberdade,10, Lisboa"> 
+
+      <label for="description">Descrição</label>
+      <textarea id="description" name="description" placeholder="Descreva o serviço solicitado..."></textarea>
+
+      <a href="#" class="buttonMain" id="agendar">Agendar</a>
+
+    </section>
+
+    
   </main>
 
   <footer>

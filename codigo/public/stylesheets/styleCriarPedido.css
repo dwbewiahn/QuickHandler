@@ -1,0 +1,36 @@
+main{
+    text-align: left;
+    background-color: #31A6FF;
+    background-image: url(../images/ferramentas.jpg);
+    background-repeat: no-repeat; 
+    background-size:cover;
+    height: 900px;
+  }
+  
+  main section{
+    display: flex;
+    align-items:left;
+    justify-content: space-between;
+    flex-direction: column;
+
+  }
+  main h1{
+    padding: 150px 0px 5px 50px;
+    font-size: 50px;
+    margin-bottom: 0px;
+  }
+  
+  main p{
+    padding: 0px 0px 0px 50px;
+    margin-top: 0px;;
+    font-size: 25px;
+  }
+
+  #description{
+      height: 200px;
+      width: 500px;
+  }
+  #morada{
+      width:300px;
+  }
+
