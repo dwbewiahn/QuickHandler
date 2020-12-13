@@ -1,61 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-family: 'poppins', sans-serif;
+  grid-template-areas:"header header header" "nav nav nav" "main main main" "footer footer footer";
+  margin: 0;
 }
-header, footer{
-  grid-column: 1/4;
-  display:flex;
-}
+
 header{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-around;
   grid-area: header;
-}
-nav{
-  grid-area: nav;
-  display: flex;
-  font-size: 20px;
-  text-align: center;
-}
-main{
-  grid-area: main;
-  display: flex;
-  text-align: center;
-  width: 100%;
-}
-.container1{
-  display:grid;
-  grid-template-areas:"header header header" "nav nav nav" "main main main";
-}
-.container2{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-.formulario{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #555555;
-}
-#formulario{
-  
-}
-#headerText{
-  text-align: center;
-  width: 100%;
-}
-#top{
   background: #EAEAED;
-  border-radius: 0px;
+  padding: 10px;
+  padding-left: 70%;
+ }
+ 
+
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-around;
+  grid-area: nav;
+  font-size: 20px;
+  height: auto;
+  padding-top: 20px;   
 }
+
 #logo{
-  width:63px;
-  height: 60px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 50px;
+  width:auto;
+  height: 50px;
   }
 
-#help {
-  background: #C8102E;
+.buttonLogin{
+  background-color:#31A6FF;
+  color:white;
+  border-radius: 5px;
+  border: solid 2px #31A6FF ;
+  padding: 10px 50px;
+  font-size: 20px;
+  text-align: center;
+  
+  } 
+ .buttonLogin:hover{
+  border: solid 2px #31A6FF ;
+  background-color: white;
+  color: #31A6FF;
+  transition-duration: 500ms;
+ }
+
+
+a{
+  text-decoration: none;
 }
 
-a {
-  color: #00B7FF;
+a:hover {
+  background-color:#31A6FF;
+  color: white;
 }
+
+ul{
+  list-style-type: none;
+  }
+
+
+main{
+  text-align: left;
+  background-color: #31A6FF;
+  background-image: url(../images/ferramentas.jpg);
+  background-repeat: no-repeat; 
+  background-size:cover;
+  height: 900px;
+}
+
+Main h1{
+  font-size: 50px;;
+}
+
+.buttonMain{
+  border: solid 2px #31A6FF ;
+  background-color: white;
+  color: #31A6FF;
+  border-radius: 5px;
+  padding: 10px 50px;
+  font-size: 20px;
+  text-align: center;
+  
+  } 
+ .buttonMain:hover{
+  background-color:#31A6FF;
+  color:white;
+
+  transition-duration: 500ms;
+ }
+
+
+footer{
+ grid-area:footer;
+ display:flex;
+ flex-direction: column;
+ text-align: center;
+ background-color: #EAEAED;
+ font-size: 20px;
+}
+
+#footerSocial{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 0px;
+  margin-top: 0px;
+  margin: 0% 30%;
+  font-size: 30px;
+  
+} 
+
+#copyright{
+  color:white;
+  background-color: rgb(62, 143, 219);
+  font-size: 12px;
+ }
