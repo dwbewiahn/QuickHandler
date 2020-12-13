@@ -1,21 +1,16 @@
-main{
-    text-align: left;
-    background-color: #31A6FF;
-    background-image: url(../images/ferramentas.jpg);
-    background-repeat: no-repeat; 
-    background-size:cover;
-    height: 900px;
-  }
-  
+
   main section{
     display: flex;
     align-items:left;
     justify-content: space-between;
-    flex-direction: column;
-
+    flex-direction: column; 
+  }
+  section{
+    padding: 0% 5%;
+    width:350px;
   }
   main h1{
-    padding: 150px 0px 5px 50px;
+    padding: 10px 0px 5px 50px;
     font-size: 50px;
     margin-bottom: 0px;
   }
@@ -28,9 +23,22 @@ main{
 
   #description{
       height: 200px;
-      width: 500px;
+   
   }
-  #morada{
-      width:300px;
-  }
+
+  .buttonMain{
+    border: solid 2px #31A6FF ;
+    background-color: white;
+    color: #31A6FF;
+    border-radius: 5px;
+    padding: 10px 50px;
+    font-size: 20px;
+    text-align: center; 
+    } 
+
+   .buttonMain:hover{
+    background-color:#31A6FF;
+    color:white;
+    transition-duration: 500ms;
+   }
 

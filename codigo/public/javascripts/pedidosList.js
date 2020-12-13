@@ -12,10 +12,10 @@ async function loadpedidos() {
         });
         let html ="";
         for (let pedido of pedidos) {
-            html += "<section><p> Data: "+pedido.date+"</p>"+
-            "<p> Estado: "+pedido.estado+"</p>" +
-            "<p> Morada: "+pedido.morada+"</p>"+
-            "<p> Descricao: "+pedido.descricao+"</p></section>";
+            html += "<div></div><section><p><b>Data:</b> "+pedido.date+"</p>"+
+            "<p><b>Estado:</b>"+pedido.estado+"</p>" +
+            "<p><b>Morada:</b> "+pedido.morada+"</p>"+
+            "<p><b>Descricao:</b>"+pedido.descricao+"</p></section>";
         }
         elemMain.innerHTML = html;
 

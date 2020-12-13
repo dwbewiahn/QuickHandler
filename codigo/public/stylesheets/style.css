@@ -36,7 +36,7 @@ nav{
   grid-area: nav;
   font-size: 20px;
   height: auto;
-  padding: 35px 50px 0px;  
+  padding: 0px 50 px 0px;  
 }
 
 
@@ -75,17 +75,9 @@ nav a:hover {
   padding: 10px 50px;
   font-size: 20px;
  }
-
-
 a{
   text-decoration: none;
 }
-
-
-ul{
-  list-style-type: none;
-  }
-
 
 main{
   text-align: left;

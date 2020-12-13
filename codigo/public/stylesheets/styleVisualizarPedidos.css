@@ -1,0 +1,23 @@
+
+
+main section{
+    display: flex;
+    flex-direction: column;
+    border-width: 10px;
+    border-color: #31A6FF;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 15px 20%;
+}
+
+main h1{
+    padding: 10px 0px 5px 50px;
+    font-size: 50px;
+    margin-bottom: 0px;
+  }
+main p{
+    font-size: 20px;
+}
+div{
+    height: 10px;
+
+}
