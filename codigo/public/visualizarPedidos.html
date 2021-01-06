@@ -7,11 +7,17 @@
   <link rel="stylesheet" href="/stylesheets/styleVisualizarPedidos.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="icon" href="images/QHLogoBlue.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="javascripts/pedidosList.js"></script>
 </head>
 
-<body>
+<body id="bodyPedidos">
   <header>
     <a href="#">Torne-se um Handler</a>
     <a href="#">Sobre QuickHanlder</a>                                                                                                                                                                                                            
@@ -26,10 +32,16 @@
     <a href="#" class="buttonLogin">Login</a>
   </nav>
 
+  <section id="containerPedidos">
+    <section id="map" >
+      <script src="javascripts/map.js" id="map"></script>
+    </section>
+
   <main>
     <h1>Pedidos</h1>
     <section id="requestList"></section>
    </main>
+   </section>
 
   <footer>
     <p>Social</p>

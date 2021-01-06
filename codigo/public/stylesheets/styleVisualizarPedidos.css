@@ -1,7 +1,17 @@
+#bodyPedidos{
+    display: grid;
+    grid-template-areas:"header header header" "nav nav nav" "cont cont cont" "footer footer footer";
+}
+#containerPedidos{
+    display: grid;
+    grid-area: cont;
+    grid-template-areas: "map main";
+}
 main{ 
+    display: grid;
+    grid-area: main;
     background: none;
     background-color: #31a6ff50;
-    height: auto;
 }
 
 main section{
@@ -10,7 +20,7 @@ main section{
     border-width: 10px;
     border-color: #31A6FF;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 40px 20%;
+    padding: 40px ;
 }
 
 main h1{
@@ -29,4 +39,11 @@ div{
 
 #requestList{
     background: none;
+}
+
+#map{
+    display:grid;
+    grid-area: map;
+    width: 100%;
+    height: 1000px;
 }
