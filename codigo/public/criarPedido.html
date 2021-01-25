@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="/stylesheets/styleCriarPedido.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="icon" href="images/QHLogoBlue.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
 </head>
 
 <body>
@@ -28,7 +34,7 @@
     <h1>Criar pedido de Handler</h1>
     <section id="mainSection">
       <section id="formPedido">
-        <label for="handlerType"><b>Selcione Tipo de Hanlder</b></label>
+        <label for="handlerType"><b>Selecione Tipo de Hanlder</b></label>
         <select name="handlerType" id="handlerTye">
           <option value=""></option>
           <option value="1">Canalizador</option>
@@ -47,6 +53,10 @@
 
         <label for="morada">Morada</label>
         <input type="text" id="morada" name="morada" placeholder="Ex.: Av. da Liberdade,10, Lisboa">
+
+        <section id="map">
+          <script src="javascripts/map.js"></script>
+        </section>
 
         <label for="description">Descrição</label>
         <textarea id="description" name="description" maxlength="255" placeholder="Descreva o serviço solicitado... (Max 255 caract.)"></textarea>
