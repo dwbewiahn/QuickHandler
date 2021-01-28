@@ -15,6 +15,12 @@ router.get('/:pos', async function(req, res, next) {
   res.send(result);
 });
 
+router.post('/', async function(req, res, next) {
+  let pedido= req.body;
+  let newPedido = await pedidoModel.postPedido(pedido);
+  res.send(newPedido);
+});
+
 // router.get('/:pos1/:pos2', async function(req, res, next) {
 //   let pos1= req.params.pos1;
 //   let pos2= req.params.pos2;

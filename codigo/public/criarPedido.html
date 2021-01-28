@@ -13,6 +13,8 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="javascripts/criarPedido.js"></script>
 </head>
 
 <body>
@@ -61,7 +63,7 @@
         <label for="description">Descrição</label>
         <textarea id="description" name="description" maxlength="255" placeholder="Descreva o serviço solicitado... (Max 255 caract.)"></textarea>
 
-        <a href="#" class="buttonMain" id="agendar">Agendar</a>
+        <a href="#" class="buttonMain" id="agendar" onclick="criarPedido()">Agendar</a>
 
       </section>
     </section>

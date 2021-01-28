@@ -31,7 +31,8 @@ main p{
     font-size: 15px;
 }
 
-#requestList{
+
+#verPedido{
     background: none;
 }
 
@@ -46,4 +47,3 @@ main p{
     height: 1000px;
     width: 600px;
 }
-

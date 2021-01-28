@@ -13,10 +13,22 @@ module.exports.getAll = async function() {
 
 module.exports.getOne = async function(id) {
     try {
-        let sql = "SELECT pedidoID as id, date, estado, morada, descricao from Pedido WHERE pedidoID = ?";
+        let sql = "SELECT pedidoID, date, estado, morada, descricao, username from Pedido, Cliente WHERE cliente_id = clienteID AND pedidoID = ?";
         let pedido = await pool.query(sql, id);
         console.log(sql);
-        return pedido;
+        return pedido[0];
+    } catch(err) {
+        console.log(err);
+        return {status:500, data: err};
+    }
+}
+
+module.exports.postPedido = async function(pedido) {
+    try {
+        let sql = "INSERT INTO Pedido (date, morada, descricao, cliente_id) VALUES( ?,?,?,?)";
+        let newPedido = await pool.query(sql, [pedido.date, pedido.morada, pedido.descricao, pedido.cliente_id]);
+        console.log(sql);
+        return newPedido;
     } catch(err) {
         console.log(err);
         return {status:500, data: err};

@@ -1,4 +1,8 @@
+var userId;
+
 window.onload = function() {
+    userId = 1;
+    sessionStorage.setItem("user_id", userId);
     loadpedidos();
 }
 
@@ -11,14 +15,13 @@ async function loadpedidos() {
             dataType: "json"
         });
         let html ="";
-        let i=0;
-        var markers = [];
+
         for (let pedido of pedidos) {
             html += "<div></div><section OnCLick='pedidoOpen("+pedido.id+")'><p><b>Data:</b> "+pedido.date+"</p>"+
             "<p><b>Estado:</b>"+pedido.estado+"</p>" +
             "<p><b>Morada:</b> "+pedido.morada+"</p>"+
             "<p><b>Descricao:</b>"+pedido.descricao+"</p></section>";
-            //loadMarker(pedido.morada);
+            loadMarker(pedido.morada);
         }
         elemMain.innerHTML = html;
 

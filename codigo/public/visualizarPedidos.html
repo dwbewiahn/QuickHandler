@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>QuickHandler</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="/stylesheets/styleVisualizarPedidos.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="icon" href="images/QHLogoBlue.png" type="image/x-icon">
   <!-- Load Leaflet from CDN -->
@@ -25,9 +24,10 @@
   <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
     integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
     crossorigin=""></script>
-
+  <link rel="stylesheet" href="/stylesheets/styleVisualizarPedidos.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="javascripts/visualizarPedidos.js"></script>
+
 </head>
 
 <body id="bodyPedidos">
@@ -45,16 +45,15 @@
     <a href="#" class="buttonLogin">Login</a>
   </nav>
 
-  <section id="containerPedidos">
+  <main>
     <section id="map" >
       <script src="javascripts/map.js"></script>
     </section>
-
-  <main>
+    <section id="list">
     <h1>Pedidos</h1>
-    <section id="requestList"></section>
+    <section id="requestList"></section></section>
    </main>
-   </section>
+   
 
   <footer>
     <p>Social</p>

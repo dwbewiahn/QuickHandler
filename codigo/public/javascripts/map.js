@@ -11,6 +11,30 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 var searchControl = L.esri.Geocoding.geosearch({position:'topright'}).addTo(map);
 
+function loadMarker(address) {
+L.esri.Geocoding.geocode().text(address).run((err, results, response) => {
+    console.log(results.results[0].latlng);
+    const { lat, lng } = results.results[0].latlng;
+    L.marker([lat, lng])
+      .addTo(map)
+      .bindPopup(address)
+      .openPopup();
+  });
+}
+
+var geocodeService = L.esri.Geocoding.geocodeService();
+
+function getAddress() {
+map.on('click', function (e) {
+    geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+        if(error) {
+            return;
+        }
+        L.marker(result.latlng).addTo(map).bindPopup(result.address.Match_addr).openPopup();
+    })
+});
+}
+
   var results = L.layerGroup().addTo(map);
 
   searchControl.on('results', function (data) {
