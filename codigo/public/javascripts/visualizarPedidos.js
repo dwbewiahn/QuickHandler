@@ -17,11 +17,11 @@ async function loadpedidos() {
         let html ="";
 
         for (let pedido of pedidos) {
-            html += "<div></div><section OnCLick='pedidoOpen("+pedido.id+")'><p><b>Data:</b> "+pedido.date+"</p>"+
+            html += "<section OnCLick='pedidoOpen("+pedido.id+")'><p><b>Data:</b> "+pedido.date+"</p>"+
             "<p><b>Estado:</b>"+pedido.estado+"</p>" +
             "<p><b>Morada:</b> "+pedido.morada+"</p>"+
             "<p><b>Descricao:</b>"+pedido.descricao+"</p></section>";
-            loadMarker(pedido.morada);
+            loadMarker(pedido.morada, pedido.id, pedido.username);
         }
         elemMain.innerHTML = html;
 

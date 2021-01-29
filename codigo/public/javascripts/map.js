@@ -11,14 +11,13 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 var searchControl = L.esri.Geocoding.geosearch({position:'topright'}).addTo(map);
 
-function loadMarker(address) {
+function loadMarker(address,id, user) {
 L.esri.Geocoding.geocode().text(address).run((err, results, response) => {
     console.log(results.results[0].latlng);
     const { lat, lng } = results.results[0].latlng;
     L.marker([lat, lng])
       .addTo(map)
-      .bindPopup(address)
-      .openPopup();
+      .bindPopup("<input type='button' class='pedidoMarker' onclick='pedidoOpen(" + id +")' value='"+user+"'>")
   });
 }
 

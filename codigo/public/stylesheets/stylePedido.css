@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
 #bodyPedidos{
     display: grid;
     grid-template-areas:"header header header" "nav nav nav" "main main main" "footer footer footer";
@@ -8,8 +11,10 @@ main{
     grid-area: main;
     background: none;
     background-color: #31a6ff50;
-    grid-template-areas: "map pedidos pedidos";
+    grid-template-areas: "map pedidos";
     grid-row: auto;
+    position: relative;
+    grid-template-columns: 30% auto;
 }
 
 main section{
@@ -18,19 +23,23 @@ main section{
     border-width: 10px;
     border-color: #31A6FF;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 40px ;
+    padding: 20px ;
 }
 
-main h1{
-    padding: 50px 0px 0px 20%;
-    font-size: 50px;
-    margin-bottom: 0px;
+.title{
+    background: none;
+}
 
+.titulo{
+    padding: 0px;
+    font-size: 50px;
+    margin-top: 0px;
+    text-align: center;
+    background: none;
   }
 main p{
     font-size: 15px;
 }
-
 
 #verPedido{
     background: none;
@@ -38,12 +47,33 @@ main p{
 
 #list{
     grid-area: pedidos;
-
 }
 
 #map{
-    display:grid;
-    grid-area: map;
-    height: 1000px;
-    width: 600px;
+    height: 530px;
+    width: 100%;
 }
+
+.map-container{
+    grid-area: map;
+}
+
+.pedidoMarker{
+    border: none;
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+    padding: 3px 6px;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+.pedidoMarker:hover {
+    background-color: #31A6FF;
+    color: white;
+  }
+  
+.pedidoMarker:focus {
+     background-color: #31A6FF; 
+     color: white;
+  }
