@@ -22,7 +22,6 @@ L.esri.Geocoding.geocode().text(address).run((err, results, response) => {
 }
 
 var geocodeService = L.esri.Geocoding.geocodeService();
-//falta colocar funcao na webpage (Criar pedido)
 function getAddress() {
 map.on('click', function (e) {
     geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
@@ -30,6 +29,7 @@ map.on('click', function (e) {
             return;
         }
         L.marker(result.latlng).addTo(map).bindPopup(result.address.Match_addr).openPopup();
+        document.getElementById("morada").value = result.address.Match_addr;
     })
 });
 }

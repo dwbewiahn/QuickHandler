@@ -2,7 +2,11 @@ var userID;
 
 window.onload= function() {
     userID = sessionStorage.getItem("userID");
-    
+    reverseGeocoding();
+}
+
+function reverseGeocoding() {
+    getAddress();
 }
 
 async function criarPedido() {
@@ -12,7 +16,7 @@ async function criarPedido() {
         morada: document.getElementById("morada").value,  
         descricao: document.getElementById("description").value,
         cliente_id: userID,
-        categoria: document.getElementById("handlerTye").value
+        categoria: document.getElementById("handlerType").value
     };
     try {
         

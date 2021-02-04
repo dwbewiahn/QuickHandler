@@ -22,7 +22,7 @@ async function verPedido(pedidoID) {
         "<p><b>Morada:</b> "+ pedido.morada +"</p>"+
         "<p><b>Descricao:</b>"+ pedido.descricao +"</p>"+
         "<p><input type='button' class='aceitar' onclick='aceitarPedido("+ pedido.id +")' value='Aceitar Pedido'>"+
-        "<p><input type='button' class='trajetoria' id='trajetoria' onclick='' value='Criar Trajetória'>"+
+        "<p><input type='button' class='trajetoria' id='trajetoria' onclick='calcularRotas()' value='Criar Trajetória'>"+
         "</section>";
 
         loadMarker(pedido.morada, pedido.id, pedido.morada);
@@ -43,5 +43,4 @@ function aceitarPedido(pedidoID) {
 async function logout(){
     await sessionStorage.removeItem("userID");
     window.location = "index.html";
- }
- }
+}
