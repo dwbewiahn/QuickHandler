@@ -1,8 +1,14 @@
 var pool = require("./connection");
 
-module.exports.getId = async function(user) {
+module.exports.getId = async function(user, userType) {
     try {
-        let sql = "SELECT clienteID from Cliente WHERE username = ?";
+        let sql ="";
+        alert(userType);
+        if(userType = "Cliente"){
+            sql = "SELECT clienteID from Cliente WHERE username = ?";
+        }else{
+            sql = "SELECT handlerID from Handler WHERE username = ?";  
+        }
         let id = await pool.query(sql, user);
         return {status: 200, data : id};
     } catch(err) {
