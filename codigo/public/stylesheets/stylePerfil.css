@@ -1,0 +1,16 @@
+main section {
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 50px 20%;
+    align-self: center;
+    padding :10px 100px;
+
+}
+
+#perfilHead{
+    margin-bottom: 80px;
+}
+
+main p{
+    font-size: 20px;
+}

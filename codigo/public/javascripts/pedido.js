@@ -57,8 +57,8 @@ async function verPedidoHandler(pedidoID) {
             "<p><b>Cliente : </b>" + pedido.username + "</p>" +
             "<p><b>Estado : </b>" + pedido.estado + "</p>" +
             "<p><b>Morada : </b> " + pedido.morada + "</p>" +
-            "<p><b>Descricao : </b>" + pedido.descricao + "</p>" +
-            "<p><b>Cliente ID : </b>" + pedido.cliente_id + "</p>"+
+            "<p><b>Descricao : </b>" + pedido.descricao + "</p>" 
+            // "<p><b>Cliente ID : </b>" + pedido.cliente_id + "</p>"+ // Para adicionar botao contatar Cliente
             "<p><input type='button' class='buttonBlue' onclick='aceitarPedido(" + pedido.id + ")' value='Aceitar Pedido'>"+
             "<p><a href='visualizarPedidos.html' type='button' class='buttonBlue'>Voltar</a></section>";
 
@@ -87,8 +87,8 @@ async function verPedidoCliente(pedidoID) {
             "<p><b>Cliente : </b>" + pedido.username + "</p>" +
             "<p><b>Estado : </b>" + pedido.estado + "</p>" +
             "<p><b>Morada : </b> " + pedido.morada + "</p>" +
-            "<p><b>Descricao : </b>" + pedido.descricao + "</p>"+
-            "<p><b>Handler ID : </b>" + pedido.handler_id + "</p>";
+            "<p><b>Descricao : </b>" + pedido.descricao + "</p>"
+            // "<p><b>Handler ID : </b>" + pedido.handler_id + "</p>"; // Para adicionar botao contatar Cliente
             
 
         loadMarker(pedido.morada, pedido.id, pedido.morada);

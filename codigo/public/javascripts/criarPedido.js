@@ -23,7 +23,6 @@ async function criarPedido() {
         categoria: document.getElementById("handlerType").value
     };
     try {
-        
         let result = await $.ajax({
             url: "/api/pedidos/",
             method: "POST",
@@ -31,7 +30,8 @@ async function criarPedido() {
             data: JSON.stringify(pedido),
             contentType: "application/json"
         });
-
+        alert("teste");
+        window.location = "visualizarPedidos.html"; // Adicionar PoPup Agendado.   
     }
         catch(err) {
         console.log(err);
@@ -45,8 +45,8 @@ async function logout(){
  }
 
 
-
-// function resetAll() {
+//Resetar Formulario - A Implementar.
+// function resetAll() {  
 
 //     document.getElementById("").reset();
 //     document.getElementById("").value = "";
