@@ -60,11 +60,13 @@ module.exports.postPedido = async function(pedido) {
 
 module.exports.atribuirPedido = async function(aPedido) {
     try {
-        let sql = "INSERT INTO Pedido (date, categoria, morada, descricao, cliente_id) VALUES( ?,?,?,?,?)";
-        let newPedido = await pool.query(sql, [aPedido.handler_id, aPedido.pedidoID ,aPedido.estado ]);
+        console.log(JSON.stringify(aPedido)); 
+        let sql = "UPDATE `Pedido` SET `handler_id` = ?, `estado` = ? WHERE `Pedido`.`pedidoID` = ? ";
+        let atualizarPedido = await pool.query(sql, [aPedido.handler_id, aPedido.estado, aPedido.pedidoID ]);
         console.log(sql);
-        if (newPedido.affectedRows > 0) { 
-            return {status: 200, msg: "Pedido Criado" };
+        console.log(atualizarPedido);
+        if (atualizarPedido.affectedRows > 0) { 
+            return {status: 200, msg: "Pedido Atualizado" };
         }
 
         //verificacoes se os campos foram preenchidos

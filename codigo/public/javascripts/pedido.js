@@ -1,12 +1,13 @@
 var userID;
 var userType;
-
+var pedidoID;
 
 window.onload = function () {
     userID = sessionStorage.getItem("userID");
     userType = sessionStorage.getItem("userType");
-    let pedidoID = sessionStorage.getItem("id");
-
+    pedidoID = sessionStorage.getItem("id");
+   
+    
     if (userType == "Cliente") {
         loadNavCliente();
         verPedidoCliente(pedidoID);
@@ -18,8 +19,7 @@ window.onload = function () {
 
 }
 
-function aceitarPedido(pedidoID) {
-
+async function aceitarPedido() {
     try {
 
         let aPedido = {
@@ -36,7 +36,6 @@ function aceitarPedido(pedidoID) {
             contentType: "application/json"
         });
 
-        alert ("pedido aceite"+result);
     }
         catch(err) {
         console.log(err);
@@ -58,8 +57,8 @@ async function verPedidoHandler(pedidoID) {
             "<p><b>Cliente : </b>" + pedido.username + "</p>" +
             "<p><b>Estado : </b>" + pedido.estado + "</p>" +
             "<p><b>Morada : </b> " + pedido.morada + "</p>" +
-            "<p><b>Descricao : </b>" + pedido.descricao + "</p>" +
-            "<p><b>Cliente ID : </b>" + pedido.cliente_id + "</p>"+
+            "<p><b>Descricao : </b>" + pedido.descricao + "</p>" 
+            // "<p><b>Cliente ID : </b>" + pedido.cliente_id + "</p>"+ // Para adicionar botao contatar Cliente
             "<p><input type='button' class='buttonBlue' onclick='aceitarPedido(" + pedido.id + ")' value='Aceitar Pedido'>"+
             "<p><a href='visualizarPedidos.html' type='button' class='buttonBlue'>Voltar</a></section>";
 
@@ -88,8 +87,8 @@ async function verPedidoCliente(pedidoID) {
             "<p><b>Cliente : </b>" + pedido.username + "</p>" +
             "<p><b>Estado : </b>" + pedido.estado + "</p>" +
             "<p><b>Morada : </b> " + pedido.morada + "</p>" +
-            "<p><b>Descricao : </b>" + pedido.descricao + "</p>"+
-            "<p><b>Handler ID : </b>" + pedido.handler_id + "</p>";
+            "<p><b>Descricao : </b>" + pedido.descricao + "</p>"
+            // "<p><b>Handler ID : </b>" + pedido.handler_id + "</p>"; // Para adicionar botao contatar Cliente
             
 
         loadMarker(pedido.morada, pedido.id, pedido.morada);

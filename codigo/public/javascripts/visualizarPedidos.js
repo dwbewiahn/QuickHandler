@@ -19,7 +19,7 @@ window.onload = function () {
 function loadButtonsHandler(){
 
     document.getElementById("tPedidos").innerHTML = "Visualizar Pedidos";
-    document.getElementById("requestList").innerHTML = "<a href='#' class='buttonBlueHandler' onclick='loadpedidos()'> Pedidos Pendentes de Handler</a><a href='#' class='buttonBlueHandler' onclick='loadMeusPedidos()'> Meus Pedidos Atribuidos</a>";
+    document.getElementById("requestList").innerHTML = "<a href='#' id='PedPenHend' class='buttonBlueHandler' onclick='loadpedidos()'> Pedidos Pendentes de Handler</a><a href='#' class='buttonBlueHandler' onclick='loadMeusPedidos()'> Meus Pedidos Atribuidos</a>";
 
 }
 
