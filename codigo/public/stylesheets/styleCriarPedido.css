@@ -1,8 +1,6 @@
-
-   #mainSection{
-    background: none;
-   } 
-
+  main{
+    height:auto;
+  }
   #formPedido{
     display: flex;
     align-items:left;
@@ -11,26 +9,20 @@
     margin: 50px auto;   
     padding: 20px 10%;
     width: 20%; 
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     
   }
 
   main label{
-      
       font-weight: bold;
   }
 
   main h1{
-    padding: 10px 0px 5px 50px;
+    margin-top: 10px;
+    padding: 0px 0px 5px 50px;
     font-size: 50px;
     margin-bottom: 0px;
     text-align: center;
-
-  }
-  
-  #description{
-    height: 200px;
-    
   }
 
   .buttonMain{
@@ -44,6 +36,9 @@
     text-align: center; 
     margin-top: 25px;
     margin-left: 0px;
+    align-self: center;
+    width: auto;
+
     } 
 
    .buttonMain:hover{
@@ -56,5 +51,23 @@
     margin-top: 25px;
     display: flex;
     height: 200px;
-    width: 290px;
+    width: 330px;
+    align-self: center;
+  
 }
+
+input, select {
+  height: 30px;
+  font-size: 15px;
+  border-radius: 3px;
+  border: none;
+}
+
+textarea {
+  height: 100px;
+  font-size: 15px;
+  border-radius: 3px;
+  border: none;
+  resize: none;
+}
+

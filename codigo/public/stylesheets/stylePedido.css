@@ -9,12 +9,13 @@
 main{ 
     display: grid;
     grid-area: main;
-    background: none;
+
     background-color: #31a6ff50;
     grid-template-areas: "map pedidos";
     grid-row: auto;
     position: relative;
     grid-template-columns: 30% auto;
+    height:auto;
 }
 
 main section{
@@ -26,6 +27,7 @@ main section{
     padding: 20px ;
 }
 
+
 .title{
     background: none;
 }
@@ -34,7 +36,7 @@ main section{
     padding: 0px;
     font-size: 50px;
     margin-top: 0px;
-    text-align: center;
+    text-align: left;
     background: none;
   }
 main p{

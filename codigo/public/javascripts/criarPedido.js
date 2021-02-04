@@ -1,19 +1,21 @@
 var userID;
 
 window.onload= function() {
-    userID = sessionStorage.getItem("user_id");
-    criarPedido();
+    userID = sessionStorage.getItem("userID");
+    
 }
 
 async function criarPedido() {
     let elemMain = document.getElementById("criarPedido");
     let pedido = {
-        date: "2021-03-21T15:30:00.000Z",
+        date: document.getElementById("date").value+" "+document.getElementById("time").value,
         morada: document.getElementById("morada").value,  
         descricao: document.getElementById("description").value,
-        cliente_id: userID
+        cliente_id: userID,
+        categoria: document.getElementById("handlerTye").value
     };
     try {
+        
         let result = await $.ajax({
             url: "/api/pedidos/",
             method: "POST",
@@ -21,8 +23,15 @@ async function criarPedido() {
             data: JSON.stringify(pedido),
             contentType: "application/json"
         });
+
+        alert (JSON.stringify(result)); // nova pagina ou mensagem criado e apaga fields
     }
         catch(err) {
         console.log(err);
     }
+}
+
+async function logout(){
+   await sessionStorage.removeItem("userID");
+   window.location = "index.html";
 }

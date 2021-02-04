@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="/stylesheets/stylePerfil.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="icon" href="images/QHLogoBlue.png" type="image/x-icon">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="javascripts/perfil.js"></script>
 </head>
 
 <body>
   <header>
-    <a href="#">Torne-se um Handler</a>
-    <a href="#">Sobre QuickHanlder</a>
+    <!-- temp fix -->
+    <!-- <a href="#">Torne-se um Handler</a>
+    <a href="#">Sobre QuickHanlder</a> -->
   </header>
 
   <nav id="navBar">
@@ -21,14 +24,18 @@
     <a href="criarPedido.html">Criar Pedido</a>
     <a href="visualizarPedidos.html">Visualizar pedidos </a>
     <a href="perfil.html">Visualizar Perfil</a>
-    <a href="#" class="buttonLogin">Login</a>
+    <a id="sairbt" href="#" class="buttonBlue" onclick="logout()">Sair</a>
   </nav>
 
   <main>
-    <p>**** Em construção ****</p>   
+    <section>
     <h1>Perfil</h1>
-    <a href="#" class="buttonMain">Editar</a>
-    <a href="#" class="buttonMain">Salvar</a>
+    <p id="nome"></p>
+    <p id="email"></p>
+    <p id="telemovel"></p>
+    <!-- <a href="#" class="buttonMain">Editar</a>
+    <a href="#" class="buttonMain">Salvar</a> -->
+  </section>
   </main>
 
   <footer>

@@ -8,19 +8,21 @@
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="icon" href="images/QHLogoBlue.png" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-  crossorigin=""></script>
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="javascripts/criarPedido.js"></script>
+
 </head>
 
 <body>
   <header>
-    <a href="#">Torne-se um Handler</a>
-    <a href="#">Sobre QuickHanlder</a>
+    <!-- temp fix -->
+    <!-- <a href="#">Torne-se um Handler</a>
+    <a href="#">Sobre QuickHanlder</a> -->
   </header>
 
   <nav id="navBar">
@@ -29,43 +31,42 @@
     <a href="criarPedido.html">Criar Pedido</a>
     <a href="visualizarPedidos.html">Visualizar pedidos </a>
     <a href="perfil.html">Visualizar Perfil</a>
-    <a href="#" class="buttonLogin">Login</a>
+    <a id="sairbt" href="#" class="buttonBlue" onclick="logout()">Sair</a>
   </nav>
 
   <main>
     <h1>Criar pedido de Handler</h1>
-    <section id="mainSection">
-      <section id="formPedido">
-        <label for="handlerType"><b>Selecione Tipo de Hanlder</b></label>
-        <select name="handlerType" id="handlerTye">
-          <option value=""></option>
-          <option value="1">Canalizador</option>
-          <option value="2">Eletricista</option>
-          <option value="3">Pedreiro</option>
-          <option value="4">Carpinteiro</option>
-          <option value="5">Pintor</option>
-          <option value="6">Reparador</option>
-        </select>
+    <section id="formPedido">
+      <label for="handlerType"><b>Selecione Tipo de Hanlder</b></label>
+      <select name="handlerType" id="handlerTye">
+        <option value=""></option>
+        <option value="Canalizador">Canalizador</option>
+        <option value="Eletricista">Eletricista</option>
+        <option value="Pedreiro">Pedreiro</option>
+        <option value="Carpinteiro">Carpinteiro</option>
+        <option value="Pintor">Pintor</option>
+        <option value="Reparador">Reparador</option>
+      </select>
 
-        <label for="date">Data:</label>
-        <input type="date" id="date" name="date">
+      <label for="date">Data</label>
+      <input type="date" id="date" name="date">
 
-        <label for="time">Hora:</label>
-        <input type="time" id="time" name="time">
+      <label for="time">Hora</label>
+      <input type="time" id="time" name="time">
 
-        <label for="morada">Morada</label>
-        <input type="text" id="morada" name="morada" placeholder="Ex.: Av. da Liberdade,10, Lisboa">
+      <label for="morada">Morada</label>
+      <input type="text" id="morada" name="morada" placeholder="Ex.: Av. da Liberdade,10, Lisboa">
 
-        <section id="map">
-          <script src="javascripts/map.js"></script>
-        </section>
+      <!-- <section id="map">
+        <script src="javascripts/map.js"></script>
+      </section> -->
 
-        <label for="description">Descrição</label>
-        <textarea id="description" name="description" maxlength="255" placeholder="Descreva o serviço solicitado... (Max 255 caract.)"></textarea>
+      <label for="description">Descrição</label>
+      <textarea id="description" name="description" maxlength="255"
+        placeholder="Descreva o serviço solicitado... (Max 255 caract.)"></textarea>
 
-        <a href="#" class="buttonMain" id="agendar" onclick="criarPedido()">Agendar</a>
+      <a href="#" class="buttonMain" id="agendar" onclick="criarPedido()">Agendar</a>
 
-      </section>
     </section>
 
   </main>

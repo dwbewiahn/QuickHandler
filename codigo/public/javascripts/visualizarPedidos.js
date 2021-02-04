@@ -1,8 +1,7 @@
-var userId;
+var userID;
 
 window.onload = function() {
-    userId = 1;
-    sessionStorage.setItem("user_id", userId);
+    userID = sessionStorage.getItem("userID");
     loadpedidos();
 }
 
@@ -17,7 +16,7 @@ async function loadpedidos() {
         let html ="";
 
         for (let pedido of pedidos) {
-            html += "<section OnCLick='pedidoOpen("+pedido.id+")'><p><b>Data:</b> "+pedido.date+"</p>"+
+            html += "<section class='pedidoCriado' OnCLick='pedidoOpen("+pedido.id+")'><p><b>Data:</b> "+pedido.date+"</p>"+
             "<p><b>Estado:</b>"+pedido.estado+"</p>" +
             "<p><b>Morada:</b> "+pedido.morada+"</p>"+
             "<p><b>Descricao:</b>"+pedido.descricao+"</p></section>";
@@ -36,3 +35,8 @@ function pedidoOpen(pedidoID) {
     sessionStorage.setItem("id",pedidoID); 
     window.location="../pedido.html";
 }
+
+async function logout(){
+    await sessionStorage.removeItem("userID");
+    window.location = "index.html";
+ }
