@@ -1,12 +1,13 @@
 var userID;
 var userType;
-
+var pedidoID;
 
 window.onload = function () {
     userID = sessionStorage.getItem("userID");
     userType = sessionStorage.getItem("userType");
-    let pedidoID = sessionStorage.getItem("id");
-
+    pedidoID = sessionStorage.getItem("id");
+   
+    
     if (userType == "Cliente") {
         loadNavCliente();
         verPedidoCliente(pedidoID);
@@ -18,8 +19,7 @@ window.onload = function () {
 
 }
 
-function aceitarPedido(pedidoID) {
-
+async function aceitarPedido() {
     try {
 
         let aPedido = {
@@ -36,7 +36,6 @@ function aceitarPedido(pedidoID) {
             contentType: "application/json"
         });
 
-        alert ("pedido aceite"+result);
     }
         catch(err) {
         console.log(err);
