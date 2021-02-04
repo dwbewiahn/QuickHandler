@@ -1,7 +1,9 @@
 var userID;
+var userType;
 
 window.onload = function() {
     userID = sessionStorage.getItem("userID");
+    userType = sessionStorage.getItem("userType");
     loadpedidos();
 }
 
@@ -38,5 +40,6 @@ function pedidoOpen(pedidoID) {
 
 async function logout(){
     await sessionStorage.removeItem("userID");
+    await sessionStorage.removeItem("userType");
     window.location = "index.html";
  }

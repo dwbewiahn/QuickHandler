@@ -49,9 +49,8 @@
   <main>
     <h1>Criar pedido de Handler</h1>
     <section id="formPedido">
-      <label for="handlerType"><b>Selecione Tipo de Hanlder</b></label>
-      <select name="handlerType" id="handlerTye">
-        <option value=""></option>
+      <label for="handlerType"><b>*Selecione Tipo de Hanlder</b></label>
+      <select name="handlerType" id="handlerType" required>
         <option value="Canalizador">Canalizador</option>
         <option value="Eletricista">Eletricista</option>
         <option value="Pedreiro">Pedreiro</option>
@@ -60,21 +59,23 @@
         <option value="Reparador">Reparador</option>
       </select>
 
-      <label for="date">Data</label>
-      <input type="date" id="date" name="date">
+      <label for="date">*Data</label>
+      <input type="date" id="date" name="date" required>
 
-      <label for="time">Hora</label>
-      <input type="time" id="time" name="time">
+      <label for="time">*Hora</label>
+      <input type="time" id="time" name="time" required>
 
-      <label for="morada">Morada</label>
-      <input type="text" id="morada" name="morada" placeholder="Ex.: Av. da Liberdade,10, Lisboa">
-      <section class="map-container">
-        <section id="map" >
-          <script src="javascripts/map.js"></script>
-        </section> </section>
+      <label for="morada">*Morada</label>
+      <input type="text" id="morada" name="morada" placeholder="Ex.: Av. da Liberdade,10, Lisboa" required maxlength="100"> 
 
       <label for="description">Descrição</label>
       <textarea id="description" name="description" maxlength="255"
+      <!-- <section id="map">
+        <script src="javascripts/map.js"></script>
+      </section> -->
+
+      <label for="description">*Descrição</label>
+      <textarea id="description" name="description" maxlength="255" required
         placeholder="Descreva o serviço solicitado... (Max 255 caract.)"></textarea>
 
       <a href="#" class="buttonMain" id="agendar" onclick="criarPedido()">Agendar</a>

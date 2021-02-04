@@ -1,7 +1,11 @@
 var userID;
+var userType;
 
 window.onload= function() {
     userID = sessionStorage.getItem("userID");
+    userType = sessionStorage.getItem("userType");
+    document.getElementById("handlerType").value = "";
+    
     reverseGeocoding();
 }
 
@@ -36,6 +40,13 @@ async function criarPedido() {
 }
 
 async function logout(){
-   await sessionStorage.removeItem("userID");
-   window.location = "index.html";
-}
+    await sessionStorage.removeItem("userID");
+    await sessionStorage.removeItem("userType");
+    window.location = "index.html";
+ }
+
+// function resetAll() {
+
+//     document.getElementById("").reset();
+//     document.getElementById("").value = "";
+// }
