@@ -1,41 +1,45 @@
 async function login() {
     let user = document.getElementById("user").value;
     let userType = document.getElementById("userType").value;
-    
-    //mudar essa verificacao de entrada correta de user para model
-    if (user.length == 0){
+
+    if (user.length == 0) {
         document.getElementById("errorUser").innerHTML = "Utilizador nao pode estar em Branco";
         return;
-    }   
-    
-    
+    }
+
     try {
         let userID = await $.ajax({
-           url: "/api/user/"+ user +"/"+userType ,
+            url: "/api/user/getId/" + user + "/" + userType,
             method: "get",
             dataType: "json"
         });
-        alert(JSON.stringify(userID));
-        //mudar essa verificacao de entrada correta de user para model
-        if(userID[0] != null){
-            sessionStorage.setItem("userID", userID[0].clienteID);
+
+        
+        if (userID[0] != null) {
+            if (userType == "Cliente") {
+                userID = userID[0].clienteID;
+            } else {
+                userID = userID[0].handlerID;
+            }
+
+            sessionStorage.setItem("userID", userID);
             sessionStorage.setItem("userType", userType);
-            if(userType == "Cliente"){
+            if (userType == "Cliente") {
                 window.location = "criarPedido.html";
-            }else {
+            } else {
                 window.location = "visualizarPedidos.html";
-            }            
+            }
         }
-        else {            
+        else {
             document.getElementById("errorUser").innerHTML = "Utilizador Nao Existe/Invalido";
-            return; 
+            return;
         }
     }
-        catch(err) {
+    catch (err) {
         console.log(err);
     }
 
-    
+
 
 
 }
