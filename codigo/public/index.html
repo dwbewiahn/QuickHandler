@@ -30,7 +30,12 @@
       <h1>Encontre um profissional para lhe ajudar</h1>
       <p>Dezenas de profissionais a sua disposição a apenas alguns cliques!</p>
       <label for="user">Utilizador</label>
-      <input type="text" id="user" name="user" placeholder="ex.: john@gmail.com" maxlength="70">
+      <input type="text" id="user" class="inputformStyle" name="user" placeholder="ex.: john@gmail.com" maxlength="70">
+      <label for="userType"><b>*Tipo de Utilizador</b></label>
+      <select class="inputformStyle" name="userType" id="userType" required>
+        <option value="Cliente">Cliente</option>
+        <option value="Handler">Handler</option>
+      </select>
       <a href="#" id="loginBt" class="buttonMain" onclick="login()">Login</a>
       <p id="errorUser"></p>
       </section>

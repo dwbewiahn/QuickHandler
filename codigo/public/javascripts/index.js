@@ -11,13 +11,18 @@ async function login() {
             dataType: "json"
         });
         
-        //mudar essa verificacao para model
+        //mudar essa verificacao de entrada correta de user para model
         if(userID[0] != null){
             sessionStorage.setItem("userID", userID[0].clienteID);
-            window.location = "perfil.html";
+            let userType = document.getElementById("userType").value;
+            sessionStorage.setItem("userType", userType);
+            if(userType == "Cliente"){
+                window.location = "criarPedido.html";
+            }else {
+                window.location = "visualizarPedidos.html";
+            }            
         }
-        else {
-            
+        else {            
             document.getElementById("errorUser").innerHTML = "Utilizador Nao Existe/Invalido";
             return; 
         }

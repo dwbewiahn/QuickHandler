@@ -1,6 +1,9 @@
 var handlerID;
+var userType;
 
 window.onload= function() {
+    userID = sessionStorage.getItem("userID");
+    userType = sessionStorage.getItem("userType");
     let pedidoID = sessionStorage.getItem("id");
     handlerID= "3"
     verPedido(pedidoID);
@@ -40,5 +43,6 @@ function aceitarPedido(pedidoID) {
 
 async function logout(){
     await sessionStorage.removeItem("userID");
+    await sessionStorage.removeItem("userType");
     window.location = "index.html";
  }

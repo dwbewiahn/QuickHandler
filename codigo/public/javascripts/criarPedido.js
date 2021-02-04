@@ -1,7 +1,10 @@
 var userID;
+var userType;
 
 window.onload= function() {
     userID = sessionStorage.getItem("userID");
+    userType = sessionStorage.getItem("userType");
+    document.getElementById("handlerType").value = "";
     
 }
 
@@ -12,7 +15,7 @@ async function criarPedido() {
         morada: document.getElementById("morada").value,  
         descricao: document.getElementById("description").value,
         cliente_id: userID,
-        categoria: document.getElementById("handlerTye").value
+        categoria: document.getElementById("handlerType").value
     };
     try {
         
@@ -32,6 +35,13 @@ async function criarPedido() {
 }
 
 async function logout(){
-   await sessionStorage.removeItem("userID");
-   window.location = "index.html";
-}
+    await sessionStorage.removeItem("userID");
+    await sessionStorage.removeItem("userType");
+    window.location = "index.html";
+ }
+
+// function resetAll() {
+
+//     document.getElementById("").reset();
+//     document.getElementById("").value = "";
+// }

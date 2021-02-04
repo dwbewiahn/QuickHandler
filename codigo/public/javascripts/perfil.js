@@ -1,8 +1,11 @@
 var userID;
+var userType;
 
 window.onload = async function() {
     userID = sessionStorage.getItem("userID");
-    document.getElementById("nome").innerHTML = userID;
+    userType = sessionStorage.getItem("userType");
+    document.getElementById("perfilHead").innerHTML = "Perfil do "+ userType;
+
     await getPerfil();
 }
 
@@ -29,5 +32,6 @@ async function getPerfil(){
 
 async function logout(){
     await sessionStorage.removeItem("userID");
+    await sessionStorage.removeItem("userType");
     window.location = "index.html";
  }
