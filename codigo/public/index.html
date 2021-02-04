@@ -6,12 +6,15 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="icon" href="images/QHLogoBlue.png" type="image/x-icon">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="javascripts/index.js"></script>
 </head>
 
 <body>
   <header>
-    <a href="#">Torne-se um Handler</a>
-    <a href="#">Sobre QuickHanlder</a>
+    <!-- temp fix -->
+    <!-- <a href="#">Torne-se um Handler</a>
+    <a href="#">Sobre QuickHanlder</a> -->
   </header>
 
   <nav id="navBar">
@@ -20,13 +23,17 @@
     <a href="criarPedido.html">Criar Pedido</a>
     <a href="visualizarPedidos.html">Visualizar pedidos </a>
     <a href="perfil.html">Visualizar Perfil</a>
-    <a href="#" class="buttonLogin">Login</a>
   </nav>
 
   <main>
-    <h1>Encontre um profissional para lhe ajudar</h1>
-    <p>Dezenas de profissionais a sua disposição a apenas alguns cliques!</p>
-    <a href="criarPedido.html" class="buttonMain">Solicitar Handler</a>
+    <section id="loginSection">
+      <h1>Encontre um profissional para lhe ajudar</h1>
+      <p>Dezenas de profissionais a sua disposição a apenas alguns cliques!</p>
+      <label for="user">Utilizador</label>
+      <input type="text" id="user" name="user" placeholder="ex.: john@gmail.com" maxlength="70">
+      <a href="#" id="loginBt" class="buttonMain" onclick="login()">Login</a>
+      <p id="errorUser"></p>
+      </section>
   </main>
 
   <footer>

@@ -1,4 +1,5 @@
 var handlerID;
+
 window.onload= function() {
     let pedidoID = sessionStorage.getItem("id");
     handlerID= "3"
@@ -39,4 +40,8 @@ function aceitarPedido(pedidoID) {
     //add handlerId to pedido in DB
 }
 
-
+async function logout(){
+    await sessionStorage.removeItem("userID");
+    window.location = "index.html";
+ }
+ }

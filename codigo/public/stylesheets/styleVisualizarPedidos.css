@@ -9,12 +9,11 @@
 main{ 
     display: grid;
     grid-area: main;
-    background: none;
-    background-color: #31a6ff50;
     grid-template-areas: "map pedidos";
     grid-row: auto;
     position: relative;
     grid-template-columns: 30% auto;
+    height:auto;
 }
 
 main section{
@@ -22,8 +21,11 @@ main section{
     flex-direction: column;
     border-width: 10px;
     border-color: #31A6FF;
-    background-color: rgba(255, 255, 255, 0.5);
     padding: 20px ;
+}
+
+.pedidoCriado{
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .title{
@@ -43,17 +45,20 @@ main p{
 
 #requestList{
     background: none;
-    overflow:scroll;
+    overflow-y:scroll;
     max-height: 400px;
 }
 #requestList section{
-    border-bottom: 2px solid lightgray;
+    width: 700px;
+    margin-bottom: 5px;
+    align-self: center;
 }
 #list{
     grid-area: pedidos;
 }
 
 #map{
+    margin-left: 50px;
     height: 530px;
     width: 100%;
 }
