@@ -78,3 +78,33 @@ main p{
      background-color: #31A6FF; 
      color: white;
   }
+  .buttonBlue{
+      width: 80px;
+      
+      margin-bottom: 15px;
+      color: white;
+  }
+
+  .buttonWhite{
+    background-color:white;
+    border-radius: 5px;
+    border: solid 2px #31A6FF ;
+    padding: 10px 50px;
+    font-size: 20px;
+    text-align: center;
+    width: 80px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    color: #31A6FF;
+    } 
+  
+   .buttonWhite:hover{
+    border: solid 2px #31A6FF ;
+    background-color: #31A6FF;
+    color: white;
+    transition-duration: 500ms;
+    padding: 10px 50px;
+    font-size: 20px;
+    width: 80px;
+    margin-bottom: 10px;;
+   }

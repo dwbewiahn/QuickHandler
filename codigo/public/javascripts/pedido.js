@@ -57,10 +57,10 @@ async function verPedidoHandler(pedidoID) {
             "<p><b>Cliente : </b>" + pedido.username + "</p>" +
             "<p><b>Estado : </b>" + pedido.estado + "</p>" +
             "<p><b>Morada : </b> " + pedido.morada + "</p>" +
-            "<p><b>Descricao : </b>" + pedido.descricao + "</p>" 
-            // "<p><b>Cliente ID : </b>" + pedido.cliente_id + "</p>"+ // Para adicionar botao contatar Cliente
-            "<p><input type='button' class='buttonBlue' onclick='aceitarPedido(" + pedido.id + ")' value='Aceitar Pedido'>"+
-            "<p><a href='visualizarPedidos.html' type='button' class='buttonBlue'>Voltar</a></section>";
+            "<p><b>Descricao : </b>" + pedido.descricao + "</p>" +
+            "<a href='visualizarPedidos.html' type='button' class='buttonWhite' onclick='aceitarPedido(" + pedido.id + ")' >Aceitar</a>"+
+            "<a href='visualizarPedidos.html' type='button' class='buttonBlue'>Voltar</a></section>";
+
 
         loadMarker(pedido.morada, pedido.id, pedido.morada);
         elemMain.innerHTML = html;
@@ -88,7 +88,7 @@ async function verPedidoCliente(pedidoID) {
             "<p><b>Estado : </b>" + pedido.estado + "</p>" +
             "<p><b>Morada : </b> " + pedido.morada + "</p>" +
             "<p><b>Descricao : </b>" + pedido.descricao + "</p>"
-            // "<p><b>Handler ID : </b>" + pedido.handler_id + "</p>"; // Para adicionar botao contatar Cliente
+
             
 
         loadMarker(pedido.morada, pedido.id, pedido.morada);
@@ -105,11 +105,14 @@ async function verPedidoCliente(pedidoID) {
 
 
 function loadNavCliente() {
-    document.getElementById("navBar").innerHTML = "<img src='/images/QHLogoBlackFull.png' id='logo' alt='QuickHandler logo'></img><a href='criarPedido.html'>Criar Pedido</a><a href='visualizarPedidos.html'>Visualizar pedidos </a><a id='sairbt' href='#' class='buttonBlue' onclick='logout()'>Sair</a>";
+    document.getElementById("navBar").innerHTML = "<img src='/images/QHLogoBlackFull.png' id='logo' alt='QuickHandler logo'></img><a href='criarPedido.html'>Criar Pedido</a><a href='visualizarPedidos.html'>Visualizar pedidos </a><a href='perfil.html'>Visualizar Perfil</a><a id='sairbt' href='#' class='buttonBlue' onclick='logout()'>Sair</a>";
+
 }
 
 function loadNavHandler() {
-    document.getElementById("navBar").innerHTML = "<img src='/images/QHLogoBlackFull.png' id='logo' alt='QuickHandler logo'></img><a href='visualizarPedidos.html'>Visualizar pedidos </a><a id='sairbt' href='#' class='buttonBlue' onclick='logout()'>Sair</a>";
+
+    document.getElementById("navBar").innerHTML = "<img src='/images/QHLogoBlackFull.png' id='logo' alt='QuickHandler logo'></img><a href='visualizarPedidos.html'>Visualizar pedidos </a><a href='perfil.html'>Visualizar Perfil</a><a id='sairbt' href='#' class='buttonBlue' onclick='logout()'>Sair</a>";
+
 }
 
 async function logout() {
