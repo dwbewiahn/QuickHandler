@@ -55,6 +55,7 @@ main p{
 }
 #list{
     grid-area: pedidos;
+    padding: 0px;
 }
 
 #map{
@@ -86,3 +87,26 @@ main p{
      background-color: #31A6FF; 
      color: white;
   }
+  .buttonBlueHandler{
+    background-color:#31A6FF;
+    border-radius: 5px;
+    border: solid 2px #31A6FF ;
+    padding: 10px 50px;
+    font-size: 30px;
+    text-align: center;
+    width: 500px;
+    align-self: center;
+    color: white;
+    margin-bottom: 30px;
+  
+    } 
+  
+   .buttonBlueHandler:hover{
+    border: solid 2px #31A6FF ;
+    background-color: white;
+    color: #31A6FF;
+    transition-duration: 500ms;
+    padding: 10px 50px;
+    font-size: 30px;
+   }
+  

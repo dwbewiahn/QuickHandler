@@ -32,7 +32,6 @@ async function criarPedido() {
             contentType: "application/json"
         });
 
-        alert (JSON.stringify(result)); // nova pagina ou mensagem criado e apaga fields
     }
         catch(err) {
         console.log(err);
@@ -44,6 +43,8 @@ async function logout(){
     await sessionStorage.removeItem("userType");
     window.location = "index.html";
  }
+
+
 
 // function resetAll() {
 

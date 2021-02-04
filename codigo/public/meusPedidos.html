@@ -8,11 +8,11 @@
   <link rel="icon" href="images/QHLogoBlue.png" type="image/x-icon">
   <!-- Load Leaflet from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin="" />
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://unpkg.com/esri-leaflet@2.5.3/dist/esri-leaflet.js"
     integrity="sha512-K0Vddb4QdnVOAuPJBHkgrua+/A9Moyv8AQEWi0xndQ+fqbRfAFd47z4A9u1AW/spLO0gEaiE1z98PK1gl5mC5Q=="
@@ -35,27 +35,30 @@
   <header>
     <!-- temp fix -->
     <!-- <a href="#">Torne-se um Handler</a>
-    <a href="#">Sobre QuickHanlder</a> -->
+    <a href="#">Sobre QuickHanlder</a> -->                                                                                                                                                                                                           
   </header>
 
   <nav id="navBar">
+    <img src="\images\QHLogoBlackFull.png" id="logo" alt="QuickHandler logo">
+    <a href="index.html"><i class="fa fa-home"></i>Home</a>
+    <a href="criarPedido.html">Criar Pedido</a>
+    <a href="visualizarPedidos.html">Visualizar pedidos </a>
+    <a href="perfil.html">Visualizar Perfil</a>
+    <a id="sairbt" href="#" class="buttonBlue" onclick="logout()">Sair</a>
   </nav>
 
   <main>
     <section class="map-container">
-      <section id="map">
-        <script src="javascripts/map.js"></script>
-      </section>
-    </section>
+    <section id="map" >
+      <script src="javascripts/map.js"></script>
+    </section> </section>
     <section id="list">
-      <section class="title">
-        <h1 id="tPedidos" class="titulo"></h1>
-      </section>
-      <section id="requestList">
-      </section>
-    </section>
-  </main>
-
+    <section class="title">
+    <h1 class="titulo">Pedidos</h1></section>
+    <section id="requestList">
+    </section></section>
+   </main>
+   
 
   <footer>
     <p>Social</p>
