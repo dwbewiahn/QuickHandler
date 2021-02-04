@@ -22,7 +22,7 @@ L.esri.Geocoding.geocode().text(address).run((err, results, response) => {
 }
 
 var geocodeService = L.esri.Geocoding.geocodeService();
-
+//falta colocar funcao na webpage (Criar pedido)
 function getAddress() {
 map.on('click', function (e) {
     geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
@@ -34,6 +34,33 @@ map.on('click', function (e) {
 });
 }
 
+var ghRouting = new GraphHopper.Routing({key:"3c32eb71-d25c-4d72-bdda-edb65abcdee9", host: "https://graphhopper.com/api/1", vehicle: "car", elevation:false});
+var routingLayer = L.layerGroup();
+
+function calcularRotas(morada){  
+  map.on('click',function(e){
+    L.esri.Geocoding.geocode().text(morada).run((err, results, response) => { 
+      const {lat, lng } = results.results[0].latlng; 
+      ghRouting.addPoint(new GHInput(e.latlng.lat, e.latlng.lng));
+      ghRouting.addPoint(new GHInput(lat,lng));
+      L.marker(e.latlng).addTo(map);
+      routingLayer = L.geoJSON().addTo(map);
+    ghRouting.doRequest()
+    .then(function (json) {
+      var path = json.paths[0];
+      routingLayer.addData({
+       "type": "Feature",
+        "geometry": path.points
+      });
+    })
+    .catch(function (err) {
+      var str = "An error occured: " + err.message;
+      $("#routing-response").text(str);
+    });
+    })
+  });
+}
+
   var results = L.layerGroup().addTo(map);
 
   searchControl.on('results', function (data) {
@@ -43,6 +70,4 @@ map.on('click', function (e) {
     }
   });
 
-// function loadMarker(){
-//     var marker= L.
-// }
+

@@ -13,7 +13,6 @@ async function verPedido(pedidoID) {
             method: "get",
             dataType: "json"
         });
-
         let html = "";
 
         html += "<p><b>Data:</b> "+ pedido.date +"</p>"+
@@ -22,9 +21,12 @@ async function verPedido(pedidoID) {
         "<p><b>Morada:</b> "+ pedido.morada +"</p>"+
         "<p><b>Descricao:</b>"+ pedido.descricao +"</p>"+
         "<p><input type='button' class='aceitar' onclick='aceitarPedido("+ pedido.id +")' value='Aceitar Pedido'>"+
+        "<p><input type='button' class='trajetoria' id='trajetoria' onclick='' value='Criar Trajetória'>"+
         "</section>";
+
         loadMarker(pedido.morada, pedido.id, pedido.morada);
         elemMain.innerHTML = html;
+        document.getElementById("trajetoria").onclick = calcularRotas(pedido.morada);
     }
         catch(err) {
         console.log(err);
@@ -36,3 +38,5 @@ async function verPedido(pedidoID) {
 function aceitarPedido(pedidoID) {
     //add handlerId to pedido in DB
 }
+
+
