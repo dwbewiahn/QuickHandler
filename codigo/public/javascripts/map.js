@@ -1,8 +1,8 @@
-var map = L.map('map').setView([38.707099, -9.152485], 13);
+var map = L.map('map').setView([38.707099, -9.152485], 14);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 14,
+    maxZoom: 20,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
@@ -20,15 +20,16 @@ L.esri.Geocoding.geocode().text(address).run((err, results, response) => {
       .bindPopup("<input type='button' class='pedidoMarker' onclick='pedidoOpen(" + id +")' value='"+user+"'>")
   });
 }
-
+var markerGroup = L.layerGroup().addTo(map);
 var geocodeService = L.esri.Geocoding.geocodeService();
 function getAddress() {
 map.on('click', function (e) {
     geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+      markerGroup.clearLayers();
         if(error) {
             return;
         }
-        L.marker(result.latlng).addTo(map).bindPopup(result.address.Match_addr).openPopup();
+        L.marker(result.latlng).addTo(markerGroup).bindPopup(result.address.Match_addr).openPopup();
         document.getElementById("morada").value = result.address.Match_addr;
     })
 });
