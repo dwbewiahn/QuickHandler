@@ -6,6 +6,7 @@ window.onload = function () {
     userID = sessionStorage.getItem("userID");
     userType = sessionStorage.getItem("userType");
     pedidoID = sessionStorage.getItem("id");
+    
    
     
     if (userType == "Cliente") {
@@ -60,7 +61,7 @@ async function verPedidoHandler(pedidoID) {
             "<p><b>Descricao : </b>" + pedido.descricao + "</p>" +
             "<a href='visualizarPedidos.html' type='button' class='buttonWhite' onclick='aceitarPedido(" + pedido.id + ")' >Aceitar</a>"+
             "<a href='visualizarPedidos.html' type='button' class='buttonBlue'>Voltar</a></section>";
-
+            calcularRotas(pedido.morada);
 
         loadMarker(pedido.morada, pedido.id, pedido.morada);
         elemMain.innerHTML = html;
@@ -88,7 +89,7 @@ async function verPedidoCliente(pedidoID) {
             "<p><b>Estado : </b>" + pedido.estado + "</p>" +
             "<p><b>Morada : </b> " + pedido.morada + "</p>" +
             "<p><b>Descricao : </b>" + pedido.descricao + "</p>"
-
+            
             
 
         loadMarker(pedido.morada, pedido.id, pedido.morada);
