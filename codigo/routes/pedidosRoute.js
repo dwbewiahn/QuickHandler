@@ -29,7 +29,7 @@ router.post('/', async function (req, res, next) {
   res.send(newPedido.msg);
 });
 
-router.post('/atribuir/', async function (req, res, next) {
+router.post('/atribuir/', async function (req, res, next) { //put e mudar rest name para nao ser verbo
   let aPedido = req.body;
   let result = await pedidoModel.atribuirPedido(aPedido);
   res.send(result.msg);

@@ -38,13 +38,16 @@ map.on('click', function (e) {
 var ghRouting = new GraphHopper.Routing({key:"3c32eb71-d25c-4d72-bdda-edb65abcdee9", host: "https://graphhopper.com/api/1", vehicle: "car", elevation:false});
 var routingLayer = L.layerGroup();
 
+var marker;
+
 function calcularRotas(morada){  
   map.on('click',function(e){
+    if(ghRouting.points.length > 1) {ghRouting.clearPoints();routingLayer.clearLayers();map.removeLayer(marker);}
     L.esri.Geocoding.geocode().text(morada).run((err, results, response) => { 
       const {lat, lng } = results.results[0].latlng; 
       ghRouting.addPoint(new GHInput(e.latlng.lat, e.latlng.lng));
       ghRouting.addPoint(new GHInput(lat,lng));
-      L.marker(e.latlng).addTo(map);
+      marker = L.marker(e.latlng).addTo(map);
       routingLayer = L.geoJSON().addTo(map);
     ghRouting.doRequest()
     .then(function (json) {
