@@ -4,10 +4,10 @@ var router = express.Router();
 var userModel = require("../models/userModel");
 
 
-router.get('/getId/:user/:userType', async function(req, res, next) {
-  let user= req.params.user;
+router.get('/getId/:username/:userType', async function(req, res, next) {
+  let username= req.params.username;
   let userType= req.params.userType;
-  let result = await userModel.getId(user, userType);
+  let result = await userModel.getId(username, userType);
   res.send(result.data);
 });
 

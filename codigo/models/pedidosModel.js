@@ -1,6 +1,6 @@
 var pool = require("./connection");
 
-module.exports.getAll = async function() {
+module.exports.getPendentes = async function() {
     try {
         let sql = "SELECT pedidoID as id, date, estado, morada, username, descricao from Pedido, Cliente WHERE cliente_id = clienteID AND estado='pendente'";
         let pedidos = await pool.query(sql);

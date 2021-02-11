@@ -23,7 +23,7 @@ async function loadpedidos() {
     let elemMain = document.getElementById("requestList");
     try {
         let pedidos = await $.ajax({
-            url: "/api/pedidos",
+            url: "/api/pedidos/pendentes",
             method: "get",
             dataType: "json"
         });

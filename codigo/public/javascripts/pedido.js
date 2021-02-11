@@ -30,8 +30,8 @@ async function aceitarPedido() {
         };
         
         let result = await $.ajax({
-            url: "/api/pedidos/atribuir/",
-            method: "POST",
+            url: "/api/pedidos/status/",
+            method: "PUT",
             dataType: "json",
             data: JSON.stringify(aPedido),
             contentType: "application/json"

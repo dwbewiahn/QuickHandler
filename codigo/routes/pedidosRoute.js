@@ -3,8 +3,8 @@ var express = require('express');
 var router = express.Router();
 var pedidoModel = require("../models/pedidosModel");
 
-router.get('/', async function (req, res, next) {
-  let result = await pedidoModel.getAll();
+router.get('/pendentes/', async function (req, res, next) {
+  let result = await pedidoModel.getPendentes();
   res.status(result.status).
     send(result.data);
 });
@@ -29,7 +29,7 @@ router.post('/', async function (req, res, next) {
   res.send(newPedido.msg);
 });
 
-router.post('/atribuir/', async function (req, res, next) { //put e mudar rest name para nao ser verbo
+router.put('/status/', async function (req, res, next) { //put e mudar rest name para nao ser verbo
   let aPedido = req.body;
   let result = await pedidoModel.atribuirPedido(aPedido);
   res.send(result.msg);
