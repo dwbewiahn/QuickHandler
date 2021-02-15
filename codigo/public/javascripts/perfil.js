@@ -13,7 +13,6 @@ window.onload = async function() {
     }
 
     document.getElementById("perfilHead").innerHTML = "Perfil do "+ userType;
-
     await getPerfil();
 
    
@@ -22,11 +21,11 @@ window.onload = async function() {
 async function getPerfil(){
     try {
            let userInfo = await $.ajax({
-           url: "/api/user/getInfo/"+ userID +"/"+userType,
+            url: "/api/user/perfil/"+ userID,
             method: "get",
             dataType: "json"
         });
-        
+        alert(userType);
         userInfo = userInfo[0];
         document.getElementById("nome").innerHTML = userInfo.nome;
         document.getElementById("email").innerHTML = userInfo.email;

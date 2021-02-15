@@ -27,13 +27,16 @@
     <section id="loginSection">
       <h1>Encontre um profissional para lhe ajudar</h1>
       <p>Dezenas de profissionais a sua disposição a apenas alguns cliques!</p>
-      <label for="user">Utilizador</label>
+      <label for="user">Utilizador/Username</label>
       <input type="text" id="user" class="inputformStyle" name="user" placeholder="ex.: john@gmail.com" maxlength="70">
-      <label for="userType"><b>*Tipo de Utilizador</b></label>
+      <label for="password">password</label>
+      <input type="password" id="password" class="inputformStyle" name="password" placeholder="******" maxlength="70">
+
+<!--       <label for="userType"><b>*Tipo de Utilizador</b></label>
       <select class="inputformStyle" name="userType" id="userType" required>
         <option value="Cliente">Cliente</option>
         <option value="Handler">Handler</option>
-      </select>
+      </select> -->
       <a href="#" id="loginBt" class="buttonMain" onclick="login()">Login</a>
       <p id="errorUser"></p>
       </section>

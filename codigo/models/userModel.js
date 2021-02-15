@@ -32,3 +32,25 @@ module.exports.getUserInfo = async function(id, userType) {
         }
 
 }
+
+module.exports.getLogin = async function(username, password) {
+    try{
+        let sql = "SELECT tipo, userID from User WHERE username= ? AND password = ?"
+        let result = await pool.query(sql, [username, password]);
+        return {status:200, data: result}
+    } catch(err) {
+        console.log(err);
+        return {status:500, data: err};
+    }
+}
+
+module.exports.getPerfil = async function(userId) {
+    try{
+        let sql = "SELECT email, nome, telemovel, username, avaliacaoMedia from User WHERE userID = ?"
+        let perfil = await pool.query(sql,userId);
+        return {status:200, data: perfil}
+    } catch(err) {
+        console.log(err);
+        return {status:500, data: err};
+    }
+}
