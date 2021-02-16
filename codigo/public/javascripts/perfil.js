@@ -25,7 +25,7 @@ async function getPerfil(){
             method: "get",
             dataType: "json"
         });
-        alert(userType);
+      
         userInfo = userInfo[0];
         document.getElementById("nome").innerHTML = userInfo.nome;
         document.getElementById("email").innerHTML = userInfo.email;

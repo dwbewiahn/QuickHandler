@@ -30,7 +30,7 @@ async function criarPedido() {
             data: JSON.stringify(pedido),
             contentType: "application/json"
         });
-        alert("teste");
+
         window.location = "visualizarPedidos.html"; // Adicionar PoPup Agendado.   
     }
         catch(err) {
